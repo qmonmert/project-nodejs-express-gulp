@@ -1,19 +1,44 @@
 var express = require('express');
-//var request = require('request');
 var router = express.Router();
+
+// Session
+var session;
 
 /* GET login page. */
 router.get('/', function(req, res) {
-    res.render('login', { title: 'Login page' });
+    session = req.session;
+    session.login;
+    res.render('login');
+});
+
+/* GET home page. */
+router.get('/index', function(req, res) {
+    res.render('index', { login : session.login });
+});
+
+/* GET nodeJS page. */
+router.get('/nodejs', function(req, res) {
+    res.render('nodejs');
+});
+
+/* GET gulp page. */
+router.get('/gulp', function(req, res) {
+    res.render('gulp');
+});
+
+/* GET bower page. */
+router.get('/bower', function(req, res) {
+    res.render('bower');
 });
 
 /* POST login page. */
 router.post('/login', function(req, res) {
     console.log('Log : ' + req.body.login + ' - ' + req.body.password);
     if (req.body.login.toString() == 'quentin' && req.body.password.toString() == 'quentin') {
-        res.render('index', { title : 'Techno', login : req.body.login });
+        session.login = req.body.login;
+        res.render('index', { login : session.login });
     } else {
-        res.render('login', { title: 'Login page' });
+        res.render('login');
     }
 });
 

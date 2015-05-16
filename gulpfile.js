@@ -117,7 +117,7 @@ gulp.task('watch', function() {
 	});
 
 	// Watch files
-	gulp.watch(['app.js', 'views/*.ejs', 'routes/*.js', 'public/stylesheets/*.css']).on('change', function(event) {
+	gulp.watch(['app.js', 'views/**/*.ejs', 'routes/*.js', 'public/stylesheets/*.css']).on('change', function(event) {
 		// Reload 
 		console.log('Le fichier ' + event.path + ' a été rechargé');
 		livereload.reload(event.path);

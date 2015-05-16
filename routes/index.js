@@ -8,7 +8,7 @@ var session;
 router.get('/', function(req, res) {
     session = req.session;
     session.login;
-    res.render('login');
+    res.render('login', {login : ''});
 });
 
 /* GET home page. */
@@ -18,17 +18,17 @@ router.get('/index', function(req, res) {
 
 /* GET nodeJS page. */
 router.get('/nodejs', function(req, res) {
-    res.render('nodejs');
+    res.render('nodejs', { login : session.login });
 });
 
 /* GET gulp page. */
 router.get('/gulp', function(req, res) {
-    res.render('gulp');
+    res.render('gulp', { login : session.login });
 });
 
 /* GET bower page. */
 router.get('/bower', function(req, res) {
-    res.render('bower');
+    res.render('bower', { login : session.login });
 });
 
 /* POST login page. */
@@ -38,7 +38,7 @@ router.post('/login', function(req, res) {
         session.login = req.body.login;
         res.render('index', { login : session.login });
     } else {
-        res.render('login');
+        res.render('login', {login : ''});
     }
 });
 

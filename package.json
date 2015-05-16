@@ -39,6 +39,7 @@
     "gulp-usemin": "^0.3.11",
     "gulp-useref": "^1.1.2",
     "gulp-zip": "^3.0.2",
+    "jquery": "^2.1.4",
     "request": "^2.55.0"
   }
 }

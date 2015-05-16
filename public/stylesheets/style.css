@@ -41,6 +41,7 @@ body {
 }
 
 .form-signin input[type="password"] {
+  margin-top: 5px;
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

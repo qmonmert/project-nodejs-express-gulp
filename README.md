@@ -38,7 +38,7 @@ bower install angular-route
 ### Npm
 
 ```
-npm install
+$ npm install
 ```
 
 ```
